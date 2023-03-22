@@ -207,7 +207,7 @@ extension EffectProducer where Failure == Never {
                 #endif
                 return
               }
-              await send(handler(error as EffectProducer<Action, Never>.Error))
+              await send(handler(error as! EffectProducer<Action, Never>.Error))
             }
           }
         }
@@ -290,7 +290,7 @@ extension EffectProducer where Failure == Never {
                 #endif
                 return
               }
-              await handler(error as EffectProducer<Action, Never>.Error, send)
+              await handler(error as! EffectProducer<Action, Never>.Error, send)
             }
           }
         }
